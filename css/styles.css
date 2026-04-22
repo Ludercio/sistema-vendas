@@ -1,0 +1,162 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #ddd;
+    padding: 20px;
+    border-bottom: 2px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav button {
+    padding: 8px 15px;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #999;
+    margin-left: 5px;
+}
+
+main {
+    padding: 20px;
+}
+
+
+#tela-loja {
+    display: flex;
+    gap: 20px;
+}
+
+#catalogo-produtos {
+    flex: 3;
+    background: #eee;
+    padding: 15px;
+    border: 1px solid #ccc;
+}
+
+#lista-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+
+.card-produto {
+    background: #fff;
+    border: 1px solid #bbb;
+    padding: 15px;
+    text-align: center;
+}
+
+.card-produto h3 { 
+    font-size: 1.1rem; 
+    margin-bottom: 10px; 
+}
+
+.card-produto p { 
+    color: #666; 
+    margin-bottom: 10px; 
+}
+
+.btn-add {
+    background: #ccc;
+    border: 1px solid #999;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+#carrinho-resumo {
+    flex: 1;
+    background: #eee;
+    padding: 20px;
+    border: 1px solid #ccc;
+    height: fit-content;
+}
+
+#dados-carrinho p {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+#btn-encerrar-compra {
+    width: 100%;
+    padding: 10px;
+    background: #bbb;
+    border: 1px solid #888;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Tela 2: Administração */
+#tela-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#container-cadastro, #container-lista-admin {
+    background: #eee;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+#form-produto div {
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: left;
+}
+
+th { background: #ddd; }
+
+/* Tela 3: Confirmação (Modal) */
+#tela-confirmacao {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none; /* Ativado via JS para flex */
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-confirmacao {
+    background: #fff;
+    padding: 40px;
+    border: 2px solid #333;
+    text-align: center;
+    max-width: 400px;
+}
+
+#modal-confirmacao h2 { 
+    font-size: 2rem;
+     margin-bottom: 20px;
+ }
+
+#btn-voltar-loja {
+     margin-top: 20px; 
+     padding: 10px 20px; 
+     cursor: pointer; 
+}
