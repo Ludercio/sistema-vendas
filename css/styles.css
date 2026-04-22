@@ -64,11 +64,10 @@ main {
     font-size: 1.1rem; 
     margin-bottom: 10px; 
 }
-
 .card-produto p { 
     color: #666; 
-    margin-bottom: 10px; 
-}
+    margin-bottom: 10px;
+ }
 
 .btn-add {
     background: #ccc;
@@ -77,7 +76,7 @@ main {
     cursor: pointer;
 }
 
-
+/* Carrinho Lateral */
 #carrinho-resumo {
     flex: 1;
     background: #eee;
