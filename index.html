@@ -6,6 +6,71 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <h1>MINHA LOJA ONLINE</h1>
+        <nav>
+            <button id="btn-navegar-loja">Ver Loja</button>
+            <button id="btn-navegar-admin">Administração</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="tela-loja">
+            <div id="catalogo-produtos">
+                <h2>Catálogo de Produtos</h2>
+                <div id="lista-produtos"></div>
+            </div>
+
+            <aside id="carrinho-resumo">
+                <h2>Resumo do Carrinho</h2>
+                <div id="dados-carrinho">
+                    <p>Itens: <span id="qtd-total">0</span></p>
+                    <p>Total: R$ <span id="valor-total">0.00</span></p>
+                </div>
+                <button id="btn-encerrar-compra">Encerrar Compra</button>
+            </aside>
+        </section>
+
+        <section id="tela-admin" style="display: none;">
+            <div id="container-cadastro">
+                <h2>Adicionar Novo Produto</h2>
+                <form id="form-produto">
+                    <div>
+                        <label for="nome-produto">Nome do Produto:</label>
+                        <input type="text" id="nome-produto" required placeholder="Ex: Teclado">
+                    </div>
+                    <div>
+                        <label for="preco-produto">Preço (MT):</label>
+                        <input type="number" id="preco-produto" step="0.01" required placeholder="0.00">
+                    </div>
+                    <button type="submit">Salvar Produto</button>
+                </form>
+            </div>
+
+            <div id="container-lista-admin">
+                <h2>Produtos Cadastrados</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Preço</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpo-tabela-produtos">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="tela-confirmacao" style="display: none;">
+            <div id="modal-confirmacao">
+                <h2>Compra Encerrada!</h2>
+                <p id="mensagem-feedback">Seu carrinho foi reiniciado (0 itens, R$ 0.00).</p>
+                <button id="btn-voltar-loja">Voltar para a Loja</button>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
