@@ -39,24 +39,29 @@ export class LojaView {
     }
 
     // 3. Renderiza a Tabela de Administração (Mantendo o trabalho dos colegas)
-    renderizarTabelaAdmin(produtos) {
-        const corpo = document.getElementById('corpo-tabela-produtos');
-        corpo.innerHTML = '';
-        
-        if (produtos.length === 0) {
-            corpo.innerHTML = '<tr><td colspan="4">Nenhum produto cadastrado</td></tr>';
-            return;
-        }
-        
-        produtos.forEach(p => {
-            corpo.innerHTML += `
-                <tr>
-                    <td>${p.id}</td>
-                    <td>${p.nome}</td>
-                    <td>Mt ${p.preco.toFixed(2)}</td>
-                    <td>${p.quantidade}</td>
-                </tr>
-            `;
-        });
+    renderizarTabelaAdmin(produtos, callbackRemover) {
+    const corpo = document.getElementById('corpo-tabela-produtos');
+    corpo.innerHTML = '';
+    
+    if (produtos.length === 0) {
+        corpo.innerHTML = '<tr><td colspan="5">Nenhum produto cadastrado</td></tr>';
+        return;
     }
+    
+    produtos.forEach(p => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${p.id}</td>
+            <td>${p.nome}</td>
+            <td>Mt ${p.preco.toFixed(2)}</td>
+            <td>${p.quantidade}</td>
+            <td>
+                <button class="btn-remover">Remover</button>
+            </td>
+        `;
+        
+        tr.querySelector('.btn-remover').onclick = () => callbackRemover(p.id);
+        corpo.appendChild(tr);
+    });
+}
 }

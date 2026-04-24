@@ -96,10 +96,19 @@ export class AppControllers {
         this.atualizarInterface();
     }
 
-    // Atualiza todos os componentes visuais de uma vez
-    atualizarInterface() {
-        this.view.renderizarCatalogo(this.produtos, (id) => this.comprar(id));
-        this.view.renderizarResumoCarrinho(this.carrinho);
-        this.view.renderizarTabelaAdmin(this.produtos);
+    removerProduto(id) {
+    const index = this.produtos.findIndex(p => p.id === id);
+    if (index !== -1) {
+        const nome = this.produtos[index].nome;
+        this.produtos.splice(index, 1);
+        alert(`Produto "${nome}" removido com sucesso!`);
+        this.atualizarInterface();
     }
+}
+
+atualizarInterface() {
+    this.view.renderizarCatalogo(this.produtos, (id) => this.comprar(id));
+    this.view.renderizarResumoCarrinho(this.carrinho);
+    this.view.renderizarTabelaAdmin(this.produtos, (id) => this.removerProduto(id)); // <- callback adicionado
+}
 }
